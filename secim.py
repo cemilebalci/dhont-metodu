@@ -1,4 +1,5 @@
 # Dosyayı aç ve verileri oku
+#yorum
 with open("oy.txt", mode='r', encoding= 'utf-8') as dosya:
     partiler = dosya.readline().strip().split(",")
     oy_orani = [float(x) for x in dosya.readline().strip().split(",")]
