@@ -1,5 +1,5 @@
 # Dosyayı aç ve verileri oku
-with open("oy.txt", "r") as dosya:
+with open("oy.txt", mode='r', encoding= 'utf-8') as dosya:
     partiler = dosya.readline().strip().split(",")
     oy_orani = [float(x) for x in dosya.readline().strip().split(",")]
     oy_sayilari = [int(x) for x in dosya.readline().strip().split(",")]
