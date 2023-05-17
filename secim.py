@@ -1,19 +1,20 @@
 # Dosyayı aç ve verileri oku
 with open("oy.txt", "r") as dosya:
     partiler = dosya.readline().strip().split(",")
-    oy_oranı = list(map(float, dosya.readline().strip().split(",")))
-    oy_sayıları = list(map(int, dosya.readline().strip().split(",")))
-    secilcek_temsilci_sayısı = int(dosya.readline().strip())
+    oy_orani = [float(x) for x in dosya.readline().strip().split(",")]
+    oy_sayilari = [int(x) for x in dosya.readline().strip().split(",")]
+    secilecek_temsilci_sayisi = int(dosya.readline().strip())
     ittifaklar = dosya.readline().strip().split(",")
     ortak_listeler = dosya.readline().strip().split(",")
 
+
 # Oy oranlarını temsilci sayısına göre güncelle
 sandalye = [0] * len(partiler)
-while sum(sandalye) < secilcek_temsilci_sayısı:
+while sum(sandalye) < secilecek_temsilci_sayisi:
     max_indeks = 0
     max_bolum = 0
     for i in range(len(partiler)):
-        N = oy_sayıları[i] / (sandalye[i] + 1)
+        N = oy_sayilari[i] / (sandalye[i] + 1)
         if N > max_bolum:
             max_bolum = N
             max_indeks = i
